@@ -140,7 +140,7 @@ body{
 .indicator {
   position: absolute;
   left: calc(var(--position) * (var(--icon-size) * 2));
-  transition: 250ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 .indicator::after,
