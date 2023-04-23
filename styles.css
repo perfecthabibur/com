@@ -1,0 +1,641 @@
+
+:root{
+  --primary: #000000;
+  --dark: #222;
+  --light: #FFFFFF;
+  --border: 2px solid #000000;
+  --bgcolortwo: radial-gradient(circle, hsla(181, 100%, 79%, 1) 0%, hsla(142, 100%, 85%, 1) 73%, hsla(58, 100%, 94%, 1) 100%);
+  --bgcolorthree: radial-gradient(circle, hsla(0, 100%, 95%, 1) 0%, hsla(48, 100%, 83%, 1) 73%, hsla(58, 100%, 83%, 1) 100%);
+  --bgcolorfour: radial-gradient(circle, hsla(56, 100%, 73%, 1) 0%, hsla(58, 100%, 50%, 1) 73%, hsla(0, 0%, 100%, 1) 100%);
+  --menuitem: radial-gradient(circle, hsla(0, 100%, 98%, 1) 0%, hsla(79, 100%, 96%, 1) 73%, hsla(58, 100%, 94%, 1) 100%);
+
+
+
+}
+
+
+body{
+  overflow-x: hidden !important;
+  background-size: 5px 5px;
+  background-image: radial-gradient(#89898957 20%, transparent 20%), linear-gradient(45deg, transparent 48%, #8686863D 48%, #8686863D 52%, transparent 52%);
+  background-color: var(--light);
+  transition: ease-in-out 0s;
+}
+
+.darkmode{
+  --primary: #FFFFFF;
+  --dark: #FFFFFF;
+  --light: #222;
+  --border: 2px solid #FFFFFF;
+  --bgcolortwo: radial-gradient(circle, hsla(20, 100%, 50%, 1) 0%, hsla(29, 96%, 48%, 1) 73%, hsla(25, 100%, 50%, 1) 100%);
+  --bgcolorthree: radial-gradient(circle, hsla(352, 70%, 56%, 1) 0%, hsla(334, 100%, 38%, 1) 73%, hsla(333, 86%, 41%, 1) 100%);
+  --bgcolorfour: radial-gradient(circle, hsla(213, 100%, 50%, 1) 0%, hsla(243, 73%, 37%, 1) 73%, hsla(255, 80%, 30%, 1) 100%);
+  --menuitem: radial-gradient(circle, hsla(214, 100%, 6%, 1) 0%, hsla(201, 100%, 12%, 1) 73%, hsla(227, 10%, 27%, 1) 100%);
+
+
+}
+
+.switch{
+  color: var(--light);
+  font-size: 40px;
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/**-- font start --**/
+h1, h2, h3, h4, h5, a{
+  margin: 0;
+  color: var(--primary);
+  font-weight: 300;
+  font-family: 'Patua One', cursive;
+}
+
+p{
+  font-family: 'Cormorant Garamond', serif; cursive, 'Galada', cursive;
+  font-weight: 500 !important;
+  color: var(--primary);
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+/**-- font end --**/
+/**-- spacing start --**/
+.spacing{
+  width: 100%;
+  height: 9rem;
+}
+/**-- spacing end --**/
+
+ul li{
+  list-style: none;
+}
+
+span{
+  color: orangered;
+}
+
+img{
+  width: 100%;
+}
+/**-- default end --**/
+/**-- hero start --**/
+.hero img{
+}
+/**-- hero end --**/
+/**-- inf start --**/
+.inf{
+  text-align: center;
+  display: block;
+  margin: 20px auto 15px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+.inf-text h5{
+  text-align: center;
+}
+
+.inf-text p{
+  text-align: center;
+}
+
+.inf .inf-head{
+  line-height: 0;
+  padding: 0;
+  margin: 0px 10px;
+}
+
+.linestart{
+  color: orangered;
+}
+
+.inf .lineend{
+  color: var(--primary);
+}
+
+.inf .iconify{
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+}
+
+/**-- inf end --**/
+/**-- slide start --**/
+.ourteam .carousel-item{
+  border-radius: 50%;
+  text-align: center;
+}
+
+
+.ourteam .carousel-item img{
+  border-radius: 50%;
+  padding: 150px;
+}
+
+.carousel-control-next, .carousel-control-prev{
+  opacity: 1 !important;
+}
+
+.userplay{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 50%;
+  background: var(--primary);
+  z-index: 1;
+  color: var(--light);
+}
+
+.userplay::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--bgcolortwo);
+  border-radius: 50%;
+  animation: userplay 2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes userplay{
+  0%{
+    transform: scale(1);
+    opacity: .3;
+  }
+  50%{
+    transform: scale(1.7);
+    opacity: .5;
+  }
+  100%{
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+
+
+.carousel-item img{
+  display: block !important;
+  width: 100% !important;
+}
+
+.carousel-indicators [data-bs-target]{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 10px !important;
+  height: 10px !important;
+  margin: 0 5px;
+  padding: 5px;
+  background: var(--light);
+  border: 2px solid var(--primary);
+  opacity: 1 !important;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/**-- slide end --**/
+
+/*==step area start==*/
+
+.step-line ul{
+  position: relative;
+  text-align: left;
+}
+
+.step-line ul::before{
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  width: 1.5px;
+  height: 100%;
+  background: var(--primary);
+}
+
+.step-line ul li{
+  position: relative;
+  padding-left: 20px;
+  text-align: left;
+}
+
+ .step-line ul li::before{
+   content: attr(data-number);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 25px;
+   font-family: 'Patua One', cursive; 
+   top: 5px;
+   background: var(--light);
+   color: var(--primary);
+   left: -31px;
+   width: 40px;
+   height: 40px;
+   position: absolute;
+   border-radius: 50%;
+   border: var(--border);
+}
+/*==step area end==*/
+/*==service area start==*/
+.service-box{
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.service-box.one{
+  background: var(--menuitem);
+}
+
+.service-box.two{
+  background: var(--bgcolortwo);
+}
+
+.service-box.three{
+  background: var(--bgcolorthree);
+}
+
+.service-box.four{
+  background: var(--bgcolorfour);
+}
+
+.service-box:hover .serviceimg{
+  transform: scale(1.22);
+}
+
+.serviceimg{
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease-in-out .3s;
+  
+}
+
+.serviceimg img{
+  width: 70%;
+}
+
+.service-box p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+/*==service area end*/
+/*==process area start*/
+.probox{
+  z-index: 1;
+  margin-bottom: 20px;
+  border: var(--);
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.probox::after{
+  content: "";
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  background: url(/Img/rectangul.png);
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+  animation: anipro 3s linear infinite;
+}
+
+@keyframes anipro{
+  0%{
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+
+.proimg{
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.proimg img{
+  width: 38px;
+}
+ 
+.probox h4{
+  margin-top: 5px;
+}
+
+.probox p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+/*==process area end*/
+/*==contact area start*/
+.contact{
+  font-family: 'Patua One', cursive;
+  position: relative;
+}
+
+.contact form{
+  position: relative;
+}
+
+.contact textarea{
+  color: var(--dark);
+  background: transparent;
+  resize: none;
+  padding: 5px;
+  font-size: 20px;
+  width: 100%;
+  height: 100px;
+  border: var(--border);
+  outline: none;
+  border-radius: 5px;
+}
+
+.contact button{
+  outline: none;
+  margin-bottom: 10px;
+  border: var(--border);
+  color: var(--primary);
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.contact input[type="email"], input[type="text"], input[type="tel"]:focus{
+  box-shadow: none !important;
+}
+
+.contact input[type="email"], input[type="text"], input[type="tel"]{
+  background: transparent;
+  color: var(--dark);
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 2px 0 2px 3px;
+  width: 90%;
+}
+
+.input-group{
+  background: transparent;
+  color: var(--dark);
+  border-radius: 5px;
+  margin-bottom: 7px;
+  border: var(--border);
+}
+
+.input-group .input-group-text{
+  background: transparent;
+  width: 10%;
+  padding: 5px;
+  border: none;
+  color: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+/*end*/
+#status {
+  font-size: 20px;
+  bottom: 10px;
+  right: 0;
+  left: 0;  
+  position: absolute !important;
+  width: 100%;
+  text-align: center;
+  padding: 4px 0;
+  margin: 0 auto;
+  border-radius: 5px !important;
+}
+
+#status.success {
+  background-color: rgb(211, 250, 153);
+  animation: status 4s ease forwards;
+}
+#status.error {
+  background-color: rgb(250, 129, 92);
+  color: white;
+  animation: status 3s ease forwards;
+}
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.contactnow {
+  font-family: 'Patua One', cursive;
+}
+
+
+.contactnow .contactbox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.contactbox a {
+  width: 40px;
+  height: 40px;
+  background: var(--light);
+  border-radius: 0 15px 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border: var(--border);
+  color: var(--dark);
+  transition: .3s;
+}
+
+.contactbox span.context {
+  font-size: 18px;
+  margin-left: 8px;
+  color: var(--dark);
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialbox {
+  width: 55px;
+  height: 55px;
+}
+
+.socialbox a img {
+  width: 100%;
+}
+
+/*==contact area end*/
+/*==testimonial area start*/
+    /* Inactive menu item */
+.mymenus{
+  z-index: 99;
+  width: 70%;
+  background: var(--menuitem);
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  box-shadow: 1px -2px 5px 1px;
+  
+}
+
+.mymenus ul{
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.mymenus ul li{
+  padding:  0!important;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li a{
+  color: var(--primary);
+  height: 100%;
+  width: 100%;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+.menuitem li a svg{
+  color: var(--primary);
+}
+
+    /* Active menu item */
+ul li a.active{
+  transform: translateY(-33px);
+  background: var(--menuitem);
+  color: var(--primary);
+  transition: ease .1s;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+ul li a.active::after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  animation: playmenu 2s linear infinite;
+  width: 100%;
+  height: 100%;
+  background: var(--menuitem);
+}
+
+@keyframes playmenu{
+  0%{
+    transform: scale(1);
+    opacity: .3;
+  }
+  50%{
+    transform: scale(1.3);
+    opacity: .5;
+  }
+  100%{
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+ 
+/*==testimonial area end*/
+
+/*==responsive area start*/
+@media screen and (max-width: 576px){
+  .ourteam .carousel-item img{
+  border-radius: 50%;
+  padding: 50px;
+ }
+ .spacing{
+    width: 100%;
+    height: 7rem;
+ }
+ .mymenus{
+   width: 100%;
+ }
+ 
+}
